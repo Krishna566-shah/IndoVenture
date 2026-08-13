@@ -10,7 +10,8 @@ const ReviewSection = () => {
 
   // 🚀 2. FETCH SAVED REVIEWS WHEN THE PAGE LOADS
   useEffect(() => {
-    fetch('http://localhost:5000/api/reviews')
+    // FIXED URL HERE
+    fetch(`${import.meta.env.VITE_API_URL}/api/reviews`)
       .then(res => res.json())
       .then(data => setReviews(data))
       .catch(err => console.error("Error fetching reviews:", err));
@@ -24,7 +25,8 @@ const ReviewSection = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/reviews', {
+      // FIXED URL HERE
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/reviews`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)

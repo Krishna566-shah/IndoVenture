@@ -8,7 +8,8 @@ const BlogSection = () => {
   const [isPublishing, setIsPublishing] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/blogs')
+    // FIXED URL HERE
+    fetch(`${import.meta.env.VITE_API_URL}/api/blogs`)
       .then(res => res.json())
       .then(data => setBlogs(data))
       .catch(err => console.error("Error fetching blogs:", err));
@@ -51,7 +52,8 @@ const BlogSection = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/blogs', {
+      // FIXED URL HERE
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/blogs`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(blogData)

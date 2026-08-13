@@ -24,7 +24,7 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      fetch('http://localhost:5000/api/destinations')
+      fetch(`${import.meta.env.VITE_API_URL}/api/places`)
         .then(res => res.json())
         .then(data => setPlaces(data))
         .catch(err => console.error("Error fetching places:", err));
@@ -55,7 +55,8 @@ const AdminDashboard = () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this destination?");
     if (confirmDelete) {
       try {
-        await fetch(`http://localhost:5000/api/destinations/${idToRemove}`, { method: 'DELETE' });
+        // FIXED URL HERE
+        await fetch(`${import.meta.env.VITE_API_URL}/api/destinations/${idToRemove}`, { method: 'DELETE' });
         setPlaces(places.filter(place => place._id !== idToRemove));
       } catch (err) {
         console.error("Error deleting place:", err);
@@ -68,7 +69,8 @@ const AdminDashboard = () => {
     if (!newPlace.title || !newPlace.state) return;
 
     try {
-      const response = await fetch('http://localhost:5000/api/destinations', {
+      // FIXED URL HERE
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/destinations`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newPlace)

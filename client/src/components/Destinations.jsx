@@ -8,7 +8,8 @@ const Destinations = () => {
   const [activeState, setActiveState] = useState('All');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/destinations')
+    // FIXED URL HERE
+    fetch(`${import.meta.env.VITE_API_URL}/api/destinations`)
       .then(res => res.json())
       .then(data => setPlaces(data))
       .catch(err => console.error("Error fetching places:", err));
