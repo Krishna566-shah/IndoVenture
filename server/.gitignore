@@ -1,0 +1,8 @@
+# Dependencies
+node_modules/
+
+# Environment Variables (Keep secrets safe!)
+.env
+
+# MacOS junk files (if you are on a Mac)
+.DS_Store

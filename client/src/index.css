@@ -1,0 +1,99 @@
+/* =========================================
+   TRAVELBHARAT - WARM DRIBBBLE AESTHETIC
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Warm, earthy Dribbble palette */
+  --bg-main: #fdf6f0;       /* Soft peach/cream background */
+  --primary-color: #d35400; /* Rich terracotta orange */
+  --primary-hover: #b94a00;
+  --text-dark: #2c1e16;     /* Deep warm brown/black */
+  --text-muted: #8b7365;
+  --card-bg: #ffffff;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  font-family: 'Plus Jakarta Sans', sans-serif; /* Cleaner, rounder font */
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* 1. Elegant Buttons */
+.btn-primary-custom {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 12px; /* Slightly squarer than pill, very modern */
+  box-shadow: 0 10px 20px rgba(211, 84, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+  transform: translateY(-3px);
+  background-color: var(--primary-hover);
+  box-shadow: 0 15px 25px rgba(211, 84, 0, 0.3);
+  color: white;
+}
+
+/* 2. Dribbble-Style Floating Cards */
+.card-custom {
+  background: var(--card-bg);
+  border: none;
+  border-radius: 24px; /* Massive rounded corners like the references */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+}
+
+.card-custom:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+.card-custom img {
+  border-radius: 24px 24px 0 0;
+  transition: transform 0.6s ease;
+}
+
+.card-custom:hover img {
+  transform: scale(1.04);
+}
+
+/* 3. The Minimalist Navbar */
+.custom-navbar {
+  background: transparent !important;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar.scrolled {
+  background: rgba(253, 246, 240, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+/* Filter Tags (For Destinations) */
+.filter-tag {
+  background: #fff;
+  color: var(--text-muted);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 12px;
+  padding: 10px 24px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.filter-tag.active {
+  background: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 15px rgba(211, 84, 0, 0.2);
+}
