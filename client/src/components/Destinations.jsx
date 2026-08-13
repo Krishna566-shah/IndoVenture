@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import PlaceCard from './PlaceCard';
+import PlaceCard from './PlaceCardItem.jsx';
 import IndiaMap from './IndiaMap'; // 🗺️ Your interactive map
 
 const Destinations = () => {
